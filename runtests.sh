@@ -7,6 +7,8 @@ fi
 
 echo "NAO ESQUEÇA DE EXECUTAR O NetPerfMeter NO SERVIDOR PARA O TESTE DE REDE"
 
+uname -a
+
 echo "Compilando mem4disk tamanho do bloco 256 bytes tamanho do arquivo 2GB-256B"
 cc -Wall -O2 -DDATASIZE=256 -DNUMBERWRITE=8388607 -o mem4disk mem4disk.c
 echo "Compilando disk4mem tamanho do bloco 256 bytes tamanho do arquivo 2GB-256B"
@@ -63,3 +65,4 @@ netperfmeter $1:9000 -tcp const0:const1460:const0:const1460 -runtime=60 > netper
 echo "Testando UDP"
 netperfmeter $1:9000 -udp const0:const1460:const0:const1460 -runtime=60 > netperf.out && tail -n 33 netperf.out && rm netperf.out
 
+uname -a
