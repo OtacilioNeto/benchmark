@@ -41,6 +41,6 @@ time -p ./disk4mem
 rm mem4disk.DATA
 
 echo "Compilando fork test"
-cc -Wall -O2 -DMAXFORK=1000000 -o fork fork.c
+cc -Wall -O2 -DMAXFORK=1000 -o fork fork.c
 echo "Testando fork..."
 time -p ./fork
