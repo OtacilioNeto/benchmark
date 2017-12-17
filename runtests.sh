@@ -54,6 +54,11 @@ cc -Wall -O2 -DMAXFORK=1000 -o fork fork.c
 echo "Testando fork..."
 time -p ./fork
 
+echo "Compilando pthread test"
+cc -Wall -O2 -DMAXTHREADS=1000 -o pthread pthread.c -lpthread
+echo "Testando pthread..."
+time -p ./pthread
+
 echo "Compilando malloc test blocos 4K 128MB total"
 cc -Wall -O2 -DMALLOCSIZE=4096 -DMAXMALLOC=32768 -o malloc malloc.c
 echo "Testando malloc..."
