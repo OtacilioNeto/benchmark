@@ -4,7 +4,9 @@
 
 void *thread(void *ptr)
 {
-    return NULL;
+    int a=0;
+    a++;
+    return &a;
 }
 
 int main(){
