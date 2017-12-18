@@ -49,12 +49,12 @@ echo "Testando read 16M..."
 time -p ./disk4mem
 rm mem4disk.DATA
 
-echo "Compilando fork test"
+echo "Compilando fork test (1000 forks)"
 cc -Wall -O2 -DMAXFORK=1000 -o fork fork.c
 echo "Testando fork..."
 time -p ./fork
 
-echo "Compilando pthread test"
+echo "Compilando pthread test (1000 threads)"
 cc -Wall -O2 -DMAXTHREADS=1000 -o pthread pthread.c -lpthread
 echo "Testando pthread..."
 time -p ./pthread
